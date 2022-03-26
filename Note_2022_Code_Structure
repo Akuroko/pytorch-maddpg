@@ -1,0 +1,15 @@
+Module used and Role
+  madrl_environments.pursuit.MAWaterWorld_mod: 环境
+  numpy：
+    numpy.random.seed：调用生成的指定随机数
+    numpy.stack：按新轴连接数组
+    numpy.random.randn：生成给定维度[0,1)的数据
+    numpy.random.normal：正态分布      
+  torch：
+    th.manual_seed：设置CPU生成随机数的种子，方便下次复现实验结果
+    th.from_numpy：将numpy类转成tensor类
+    th.cuda.ByteTensor ： 创建布尔型变量
+    torch.optim.Adam：优化器
+  visdom：可视化工具
+  copy.deepcopy： 复制成新的对象
+  collections.namedtuple：具名元组
