@@ -13,3 +13,32 @@ Module used and Role
   visdom：可视化工具
   copy.deepcopy： 复制成新的对象
   collections.namedtuple：具名元组
+
+File run order
+  main.py
+    MADDPG.py
+      model.py
+      memory.py
+      params.py
+  
+Code run flow
+  main.py
+    1 设置不同收益值 2 设置合作者数量 3 建立环境
+    4 设置智能体个数、状态空间、动作空间、容量、抽样数、游戏次数、最大步长、训练前游戏次数
+    5 加载MADDPG模型 MADDPG.py
+    6 训练
+      每个episode：
+        重置环境，重置总reward，重置每个agent-reward
+        对于每个时刻：
+          选择动作MADDPG.py
+          计算收益、状态、总收益，存储memory
+          更新状态
+          更新策略MADDPG.py
+ 
+Code structure:
+  MADDPG.py
+    属性：actors网络，critics网络，目标actors网络，目标critics 网络，智能体数，状态数，动作数，记忆，抽样数，训练前游戏次数，折现因子gamma，学习率tau，critic优化器，actor优化器
+    函数：
+      1 update_policy:
+        
+    
